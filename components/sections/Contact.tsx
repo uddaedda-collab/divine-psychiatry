@@ -33,8 +33,8 @@ export default function Contact() {
 
         <div className="mt-12 grid lg:grid-cols-12 gap-5">
           <motion.div
-            initial={{ opacity: 0, x: -32, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.2,0.7,0.2,1] }}
             className="lg:col-span-5 glass-strong rounded-3xl p-7 sm:p-8 glass-shine"
@@ -91,8 +91,8 @@ export default function Contact() {
 
           <motion.form
             onSubmit={onSubmit}
-            initial={{ opacity: 0, x: 32, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.2,0.7,0.2,1] }}
             className="lg:col-span-7 glass-strong rounded-3xl p-7 sm:p-8 glass-shine"

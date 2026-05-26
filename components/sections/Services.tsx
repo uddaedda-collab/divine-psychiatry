@@ -30,8 +30,8 @@ export default function Services() {
           {services.map((s, i) => (
             <motion.article
               key={s.t}
-              initial={{ opacity: 0, y: 26, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.7, delay: (i % 3) * 0.06, ease: [0.2,0.7,0.2,1] }}
               whileHover={{ y: -4 }}

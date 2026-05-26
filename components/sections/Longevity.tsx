@@ -26,11 +26,10 @@ export default function Longevity() {
           }}
         />
         <div
-          className="absolute left-1/2 top-1/2 w-[140%] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 animate-slowSpin"
+          className="absolute left-1/2 top-1/2 w-[140%] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25"
           style={{
             background:
-              "conic-gradient(from 0deg, rgba(62,224,196,0.0), rgba(62,224,196,0.12), rgba(36,112,240,0.12), rgba(62,224,196,0.0))",
-            filter: "blur(30px)"
+              "conic-gradient(from 0deg, rgba(62,224,196,0.0), rgba(62,224,196,0.12), rgba(36,112,240,0.12), rgba(62,224,196,0.0))"
           }}
         />
       </div>
@@ -46,8 +45,8 @@ export default function Longevity() {
           {topics.map((t, i) => (
             <motion.div
               key={t.t}
-              initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.85, delay: i * 0.05, ease: [0.2,0.7,0.2,1] }}
               className="relative glass glass-shine rounded-2xl p-6 overflow-hidden"

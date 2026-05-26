@@ -25,8 +25,8 @@ export default function SectionHeading({
         {eyebrow}
       </motion.span>
       <motion.h2
-        initial={{ opacity: 0, y: 22, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10% 0px" }}
         transition={{ duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}
         className="h2 mt-3 text-gradient"

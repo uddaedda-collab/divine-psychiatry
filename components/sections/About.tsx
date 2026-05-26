@@ -38,12 +38,8 @@ export default function About() {
               style={{ y }}
               className="relative aspect-[3/4] rounded-[28px] overflow-hidden glass glass-shine"
             >
-              {/* blurred backdrop so full photo is always visible */}
-              <img
-                src={doctorImages.primary}
-                aria-hidden
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
-              />
+              {/* solid dark backdrop so portrait fits without cropping */}
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ink-900 to-ink-800" />
               <img
                 src={doctorImages.primary}
                 alt="Dr. Sandeep Sharma — Consultant Psychiatrist"
@@ -71,8 +67,8 @@ export default function About() {
 
             {/* Floating signature card */}
             <motion.div
-              initial={{ opacity: 0, x: -24, filter: "blur(14px)" }}
-              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.2,0.7,0.2,1] }}
               className="hidden xl:flex absolute -bottom-6 -left-6 glass-strong rounded-2xl p-4 items-center gap-3 max-w-[260px] z-10"

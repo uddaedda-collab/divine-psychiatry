@@ -53,19 +53,15 @@ export default function Outreach() {
           {cards.map((c, i) => (
             <motion.figure
               key={c.title}
-              initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.8, delay: i * 0.05, ease: [0.2,0.7,0.2,1] }}
               className="glass glass-shine rounded-2xl overflow-hidden flex flex-col"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
-                {/* blurred fill so full photo is shown without cropping faces */}
-                <img
-                  src={c.img}
-                  aria-hidden
-                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
-                />
+                {/* solid dark backdrop instead of duplicated blur (much cheaper) */}
+                <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ink-900 to-ink-800" />
                 <img
                   src={c.img}
                   alt={c.title}

@@ -55,8 +55,8 @@ export default function Global() {
 
         <div className="mt-12 grid lg:grid-cols-12 gap-5">
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.2,0.7,0.2,1] }}
             className="lg:col-span-5 glass-strong rounded-3xl p-7 sm:p-8 glass-shine"
@@ -80,8 +80,8 @@ export default function Global() {
             {features.map((f, i) => (
               <motion.div
                 key={f.t}
-                initial={{ opacity: 0, y: 22, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.05 }}
                 className="glass rounded-2xl p-5 glass-shine"

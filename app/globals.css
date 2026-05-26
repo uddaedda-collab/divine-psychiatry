@@ -32,14 +32,12 @@ body {
 /* Cinematic ambient backdrop */
 .app-bg::before {
   content: "";
-  position: fixed; inset: -10%;
+  position: fixed; inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 12% 10%, rgba(36,112,240,0.25), transparent 60%),
-    radial-gradient(50% 50% at 88% 18%, rgba(62,224,196,0.18), transparent 60%),
-    radial-gradient(60% 50% at 50% 110%, rgba(36,112,240,0.22), transparent 60%),
-    radial-gradient(40% 40% at 80% 80%, rgba(233,200,122,0.10), transparent 60%);
-  filter: blur(40px) saturate(120%);
+    radial-gradient(60% 50% at 12% 10%, rgba(36,112,240,0.18), transparent 60%),
+    radial-gradient(50% 50% at 88% 18%, rgba(62,224,196,0.14), transparent 60%),
+    radial-gradient(60% 50% at 50% 110%, rgba(36,112,240,0.16), transparent 60%);
   z-index: 0;
 }
 
@@ -61,13 +59,12 @@ body {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
   border: 1px solid var(--line);
-  backdrop-filter: blur(22px) saturate(130%);
-  -webkit-backdrop-filter: blur(22px) saturate(130%);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.10),
     inset 0 -1px 0 rgba(255,255,255,0.04),
-    0 30px 60px -20px rgba(0,0,0,0.55),
-    0 8px 24px -10px rgba(0,0,0,0.45);
+    0 20px 40px -20px rgba(0,0,0,0.5);
   border-radius: 22px;
 }
 
@@ -75,34 +72,23 @@ body {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
   border: 1px solid var(--line-strong);
-  backdrop-filter: blur(28px) saturate(140%);
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.16),
     inset 0 -1px 0 rgba(255,255,255,0.05),
-    0 40px 80px -30px rgba(0,0,0,0.65),
-    0 10px 30px -10px rgba(0,0,0,0.5);
+    0 24px 50px -24px rgba(0,0,0,0.55);
   border-radius: 26px;
 }
 
 .glass-faint {
   background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
   border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-radius: 18px;
 }
 
 .glass-shine {
-  position: relative; overflow: hidden;
-}
-.glass-shine::after {
-  content: "";
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(120% 60% at 0% 0%, rgba(255,255,255,0.10), transparent 50%),
-    radial-gradient(80% 60% at 100% 0%, rgba(62,224,196,0.10), transparent 60%);
-  pointer-events: none;
+  position: relative;
 }
 
 .divider-line {
@@ -128,8 +114,6 @@ body {
   font-weight: 500; letter-spacing: -0.01em;
   border: 1px solid var(--line-strong);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
   transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s, border-color .35s;
   will-change: transform;
 }

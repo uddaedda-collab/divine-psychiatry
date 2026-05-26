@@ -10,9 +10,8 @@ export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -80]);
-  const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", reduce ? "blur(0px)" : "blur(8px)"]);
-  const fade = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]);
+  const fade = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
   return (
     <section id="top" ref={ref} className="relative min-h-[100svh] pt-28 sm:pt-32 pb-16 overflow-hidden">
@@ -21,21 +20,19 @@ export default function Hero() {
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] max-w-[1400px] max-h-[1400px] rounded-full"
              style={{
                background:
-                 "radial-gradient(closest-side, rgba(36,112,240,0.35), rgba(36,112,240,0) 70%)",
-               filter: "blur(40px)"
+                 "radial-gradient(closest-side, rgba(36,112,240,0.35), rgba(36,112,240,0) 70%)"
              }}
         />
         <div className="absolute -bottom-40 -right-20 w-[80vw] h-[80vw] max-w-[1000px] max-h-[1000px] rounded-full opacity-80"
              style={{
                background:
-                 "radial-gradient(closest-side, rgba(62,224,196,0.28), rgba(62,224,196,0) 70%)",
-               filter: "blur(40px)"
+                 "radial-gradient(closest-side, rgba(62,224,196,0.28), rgba(62,224,196,0) 70%)"
              }}
         />
         <Particles density={42} />
       </div>
 
-      <motion.div style={{ y, opacity: fade, filter: blur }} className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <motion.div style={{ y, opacity: fade }} className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,8 +47,8 @@ export default function Hero() {
 
         {/* Main glass panel */}
         <motion.div
-          initial={{ opacity: 0, y: 36, scale: 0.98, filter: "blur(20px)" }}
-          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 36, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.1, ease: [0.2, 0.7, 0.2, 1], delay: 0.1 }}
           className="relative mt-6 mx-auto glass-strong glass-shine rounded-[34px] p-7 sm:p-12 max-w-5xl"
         >
@@ -136,8 +133,8 @@ export default function Hero() {
           ].map((s, i) => (
             <motion.div
               key={s.l}
-              initial={{ opacity: 0, y: 18, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 + i * 0.08, duration: 0.7, ease: [0.2,0.7,0.2,1] }}
               className="glass rounded-2xl p-4 sm:p-5 text-center"
             >

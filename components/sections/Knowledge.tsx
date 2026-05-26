@@ -36,8 +36,8 @@ export default function Knowledge() {
             <motion.a
               key={a.title}
               href="#contact"
-              initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: (i % 3) * 0.05 }}
               whileHover={{ y: -4 }}

@@ -23,19 +23,18 @@ export default function GlassPanel({
   const variants = {
     hidden:
       from === "left"
-        ? { opacity: 0, x: -40, filter: "blur(14px)" }
+        ? { opacity: 0, x: -32 }
         : from === "right"
-        ? { opacity: 0, x: 40, filter: "blur(14px)" }
+        ? { opacity: 0, x: 32 }
         : from === "depth"
-        ? { opacity: 0, scale: 0.96, filter: "blur(18px)" }
-        : { opacity: 0, y: 32, filter: "blur(14px)" },
+        ? { opacity: 0, scale: 0.97 }
+        : { opacity: 0, y: 24 },
     show: {
       opacity: 1,
       x: 0,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.9, ease: [0.2, 0.7, 0.2, 1], delay }
+      transition: { duration: 0.7, ease: [0.2, 0.7, 0.2, 1], delay }
     }
   };
 

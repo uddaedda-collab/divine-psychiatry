@@ -108,8 +108,8 @@ export default function Reviews() {
 
           {/* Rating summary */}
           <motion.div
-            initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
             className="lg:col-span-5 glass-strong rounded-3xl p-6 glass-shine"
@@ -138,8 +138,8 @@ export default function Reviews() {
           {reviews.map((r, i) => (
             <motion.article
               key={r.name}
-              initial={{ opacity: 0, y: 26, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.7, delay: (i % 3) * 0.06, ease: [0.2,0.7,0.2,1] }}
               className="mb-5 break-inside-avoid glass glass-shine rounded-2xl p-5"
