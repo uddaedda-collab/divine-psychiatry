@@ -24,9 +24,10 @@ export default function Particles({
     if (!ctx) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Disable particles on small / low-power devices entirely
-    const isSmall = window.innerWidth < 900;
-    if (reduce || isSmall) return;
+    if (reduce) return;
+    // Tier-based density: fewer particles on small screens
+    const w = window.innerWidth;
+    const tierDensity = w < 640 ? Math.min(14, density) : w < 1024 ? Math.min(24, density) : density;
 
     let raf = 0;
     let alive = true;
@@ -43,7 +44,7 @@ export default function Particles({
 
     type P = { x: number; y: number; r: number; vx: number; vy: number; a: number };
     const parts: P[] = [];
-    const count = reduce ? 0 : Math.min(24, density);
+    const count = tierDensity;
     for (let i = 0; i < count; i++) {
       parts.push({
         x: Math.random() * canvas.width,

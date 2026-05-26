@@ -10,6 +10,10 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
+    // On touch / mobile devices, native scroll is smoother and saves battery
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024;
+    if (isTouch) return;
+
     const lenis = new Lenis({
       duration: 0.9,
       easing: (t) => 1 - Math.pow(1 - t, 3),

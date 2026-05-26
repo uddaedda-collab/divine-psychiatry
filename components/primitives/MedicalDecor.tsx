@@ -406,73 +406,24 @@ export function CrossPlus({ className = "" }: { className?: string }) {
 }
 
 /* ================================================================
- *  PARALLAX FLOATER  (scroll-linked)
- *
- *  Wraps a child medicine glyph and translates it on scroll.
- *  Cheap: 1 scroll listener + transform per element, GPU only.
+ *  ScrollFloat — kept for compatibility, but heavy work is done by
+ *  the global MedicineRain shared rAF.
  * ================================================================ */
+
+import { useEffect as _useEffect, useRef as _useRef } from "react";
 
 export function ScrollFloat({
   children,
-  speed = 0.15,
-  drift = 0,
-  spin = 0,
   className = ""
 }: {
   children: React.ReactNode;
-  /** vertical speed (px per scrolled px). Negative = moves up faster. */
   speed?: number;
-  /** horizontal drift coefficient */
   drift?: number;
-  /** rotation per 1000px scrolled */
   spin?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const raf = useRef<number>(0);
-  const target = useRef({ y: 0, x: 0, r: 0 });
-  const current = useRef({ y: 0, x: 0, r: 0 });
-
-  useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-
-    const isSmall = window.innerWidth < 640;
-    const factor = isSmall ? 0.5 : 1;
-
-    const onScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
-      target.current.y = -center * speed * factor;
-      target.current.x = Math.sin(window.scrollY * 0.002) * 30 * drift * factor;
-      target.current.r = (window.scrollY / 1000) * spin;
-    };
-
-    const tick = () => {
-      // ease towards target — keeps it buttery smooth without re-layout
-      current.current.y += (target.current.y - current.current.y) * 0.12;
-      current.current.x += (target.current.x - current.current.x) * 0.12;
-      current.current.r += (target.current.r - current.current.r) * 0.12;
-      if (ref.current) {
-        ref.current.style.transform =
-          `translate3d(${current.current.x.toFixed(2)}px, ${current.current.y.toFixed(2)}px, 0) rotate(${current.current.r.toFixed(2)}deg)`;
-      }
-      raf.current = requestAnimationFrame(tick);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    raf.current = requestAnimationFrame(tick);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf.current);
-    };
-  }, [speed, drift, spin]);
-
   return (
-    <div ref={ref} className={`pointer-events-none will-change-transform ${className}`}>
+    <div className={`pointer-events-none ${className}`}>
       {children}
     </div>
   );
