@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1322"/>
+      <stop offset="1" stop-color="#091f43"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="40%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#4f93ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4f93ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="80%" cy="100%" r="50%">
+      <stop offset="0" stop-color="#3ee0c4" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3ee0c4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#g1)"/>
+  <rect width="800" height="1000" fill="url(#g2)"/>
+  <g opacity="0.7" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1">
+    <circle cx="400" cy="500" r="220" fill="none"/>
+    <circle cx="400" cy="500" r="320" fill="none"/>
+    <circle cx="400" cy="500" r="420" fill="none"/>
+  </g>
+  <g transform="translate(400 460)">
+    <circle r="120" fill="#0c1322" stroke="#3ee0c4" stroke-opacity="0.4"/>
+    <text text-anchor="middle" y="10" fill="#cfe1ff" font-family="Inter,system-ui" font-size="44" font-weight="600">SS</text>
+  </g>
+  <text x="400" y="700" text-anchor="middle" fill="#9bd6c8" font-family="Inter,system-ui" font-size="20" letter-spacing="6">DR. SANDEEP SHARMA</text>
+  <text x="400" y="740" text-anchor="middle" fill="#9aa6bd" font-family="Inter,system-ui" font-size="16" letter-spacing="4">CONSULTANT PSYCHIATRIST · OPD</text>
+</svg>

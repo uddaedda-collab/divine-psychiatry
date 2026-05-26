@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1c"/>
+      <stop offset="1" stop-color="#0c1322"/>
+    </linearGradient>
+    <radialGradient id="g" cx="50%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#3ee0c4" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3ee0c4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="800" fill="url(#bg)"/>
+  <rect width="1024" height="800" fill="url(#g)"/>
+  <rect x="60" y="60" width="200" height="60" rx="10" fill="#fff" opacity="0.04"/>
+  <text x="160" y="98" text-anchor="middle" fill="#3ee0c4" font-family="Inter,system-ui" font-size="18" font-weight="600">DIVINE</text>
+  <g transform="translate(700 360)">
+    <circle r="160" fill="#0c1322" stroke="#3ee0c4" stroke-opacity="0.4"/>
+    <text text-anchor="middle" y="12" fill="#fff" font-family="Inter,system-ui" font-size="56" font-weight="600">SS</text>
+  </g>
+  <rect x="60" y="640" width="500" height="80" rx="10" fill="#0a0f1c" opacity="0.7"/>
+  <text x="80" y="680" fill="#cfe1ff" font-family="Inter,system-ui" font-size="20" font-weight="600">DR. SANDEEP SHARMA</text>
+  <text x="80" y="704" fill="#9aa6bd" font-family="Inter,system-ui" font-size="14" letter-spacing="3">CONSULTANT PSYCHIATRIST</text>
+</svg>
