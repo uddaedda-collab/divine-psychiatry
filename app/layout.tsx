@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MedicineRain from "@/components/MedicineRain";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${display.variable}`}>
       <body className="app-bg font-sans">
         <SmoothScroll>
+          <MedicineRain />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />

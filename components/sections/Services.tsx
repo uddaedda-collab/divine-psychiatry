@@ -20,10 +20,6 @@ const services: { i: IconName; t: string; d: string }[] = [
 export default function Services() {
   return (
     <section id="services" className="section relative overflow-hidden">
-      {/* Floating capsule accents */}
-      <Capsule className="hidden md:block absolute top-24 right-[6%] animate-floatA" rotate={-18} hue="teal" size={64} />
-      <Capsule className="hidden lg:block absolute bottom-20 left-[6%] animate-floatB" rotate={22} hue="blue" size={56} />
-
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Areas of Care"

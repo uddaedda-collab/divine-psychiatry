@@ -35,9 +35,6 @@ export default function Longevity() {
         />
         {/* Neuron web — calm brain motif */}
         <NeuronWeb className="absolute inset-x-0 top-1/3 mx-auto w-[120%] max-w-[1300px] opacity-[0.22]" />
-        {/* corner capsules */}
-        <Capsule className="hidden md:block absolute top-10 right-10 animate-floatA" rotate={18} hue="teal" size={70} />
-        <Capsule className="hidden md:block absolute bottom-12 left-10 animate-floatC" rotate={-22} hue="blue" size={60} />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">

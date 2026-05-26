@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --bg-0: #04070d;
-  --bg-1: #070b15;
-  --ink: #e7eef9;
-  --ink-dim: #9aa6bd;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
+  --bg-0: #0c1730;
+  --bg-1: #142244;
+  --ink: #ecf2ff;
+  --ink-dim: #aab6d2;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
   --brand: #4f93ff;
   --brand-2: #2470f0;
   --teal: #3ee0c4;
@@ -18,7 +18,7 @@
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 html, body {
-  background: var(--bg-0);
+  background: linear-gradient(180deg, #0c1730 0%, #142244 50%, #0c1730 100%);
   color: var(--ink);
   scroll-behavior: smooth;
 }
@@ -35,9 +35,9 @@ body {
   position: fixed; inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 12% 10%, rgba(36,112,240,0.18), transparent 60%),
-    radial-gradient(50% 50% at 88% 18%, rgba(62,224,196,0.14), transparent 60%),
-    radial-gradient(60% 50% at 50% 110%, rgba(36,112,240,0.16), transparent 60%);
+    radial-gradient(60% 50% at 12% 10%, rgba(79,147,255,0.28), transparent 60%),
+    radial-gradient(50% 50% at 88% 18%, rgba(62,224,196,0.22), transparent 60%),
+    radial-gradient(60% 50% at 50% 110%, rgba(79,147,255,0.22), transparent 60%);
   z-index: 0;
 }
 
@@ -46,12 +46,12 @@ body {
   position: fixed; inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 /* Liquid glass surfaces */
@@ -141,7 +141,7 @@ body {
   color: #cfd9ec;
 }
 
-.section { position: relative; padding-block: clamp(80px, 12vw, 160px); }
+.section { position: relative; padding-block: clamp(80px, 12vw, 160px); z-index: 2; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: .5rem;

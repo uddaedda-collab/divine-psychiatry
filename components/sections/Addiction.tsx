@@ -17,10 +17,6 @@ const areas = [
 export default function Addiction() {
   return (
     <section id="addiction" className="section relative overflow-hidden">
-      <Capsule className="hidden md:block absolute top-16 left-[4%] animate-floatA" rotate={28} hue="teal" size={70} />
-      <Capsule className="hidden md:block absolute bottom-20 right-[5%] animate-floatB" rotate={-18} hue="blue" size={60} />
-      <RxBadge className="hidden lg:block absolute top-32 right-[8%] w-12 h-12 animate-floatC" />
-
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5">

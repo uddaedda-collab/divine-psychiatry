@@ -40,17 +40,6 @@ export default function Hero() {
 
         {/* Faint neuron mesh, far behind */}
         <NeuronWeb className="absolute left-1/2 top-1/3 -translate-x-1/2 w-[120vw] max-w-[1200px] opacity-[0.18]" />
-
-        {/* Floating capsules — desktop only */}
-        <Capsule className="hidden md:block absolute top-32 left-[6%] animate-floatA" rotate={-20} hue="teal" size={84} />
-        <Capsule className="hidden md:block absolute top-44 right-[8%] animate-floatB" rotate={18} hue="gold" size={72} />
-        <Capsule className="hidden lg:block absolute bottom-28 left-[14%] animate-floatC" rotate={32} hue="blue" size={64} />
-        <Capsule className="hidden lg:block absolute bottom-36 right-[16%] animate-floatA" rotate={-14} hue="teal" size={60} />
-
-        {/* Tiny medical glyphs */}
-        <CrossPlus className="hidden md:block absolute top-40 left-[28%] w-4 h-4 text-teal-400 animate-glowSoft" />
-        <CrossPlus className="hidden md:block absolute bottom-48 right-[30%] w-3 h-3 text-brand-300 animate-glowSoft" />
-        <RxBadge className="hidden lg:block absolute top-[52%] left-[8%] w-12 h-12 animate-floatA" />
       </div>
 
       <motion.div style={{ y, opacity: fade }} className="relative mx-auto max-w-6xl px-4 sm:px-6">
