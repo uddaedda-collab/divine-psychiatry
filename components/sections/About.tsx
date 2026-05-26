@@ -20,7 +20,7 @@ export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [60, -60]);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [30, -30]);
 
   return (
     <section id="about" ref={ref} className="section">
@@ -36,24 +36,30 @@ export default function About() {
           <div className="lg:col-span-5 relative">
             <motion.div
               style={{ y }}
-              className="relative ratio-portrait rounded-[28px] overflow-hidden glass glass-shine"
+              className="relative aspect-[3/4] rounded-[28px] overflow-hidden glass glass-shine"
             >
+              {/* blurred backdrop so full photo is always visible */}
+              <img
+                src={doctorImages.primary}
+                aria-hidden
+                className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
+              />
               <img
                 src={doctorImages.primary}
                 alt="Dr. Sandeep Sharma — Consultant Psychiatrist"
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="relative z-[1] w-full h-full object-contain"
               />
               <div
                 aria-hidden
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 z-[2] pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(4,7,13,0) 50%, rgba(4,7,13,0.5) 100%), radial-gradient(60% 40% at 80% 0%, rgba(62,224,196,0.18), transparent 70%)"
+                    "linear-gradient(180deg, rgba(4,7,13,0) 60%, rgba(4,7,13,0.55) 100%), radial-gradient(60% 40% at 80% 0%, rgba(62,224,196,0.18), transparent 70%)"
                 }}
               />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <div className="absolute z-[3] bottom-4 left-4 right-4 flex items-center justify-between">
                 <div className="glass-faint rounded-full px-3 py-1.5 text-xs text-white/85">
                   Consultant Psychiatrist
                 </div>
@@ -69,7 +75,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.2,0.7,0.2,1] }}
-              className="hidden md:flex absolute -bottom-6 -right-4 glass-strong rounded-2xl p-4 items-center gap-3 max-w-[260px]"
+              className="hidden xl:flex absolute -bottom-6 -left-6 glass-strong rounded-2xl p-4 items-center gap-3 max-w-[260px] z-10"
             >
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-brand-500 flex items-center justify-center text-ink-950">
                 <Icon name="sparkle" />

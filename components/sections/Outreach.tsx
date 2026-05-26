@@ -57,24 +57,28 @@ export default function Outreach() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.8, delay: i * 0.05, ease: [0.2,0.7,0.2,1] }}
-              className={`glass glass-shine rounded-2xl overflow-hidden ${
-                i === 0 ? "lg:col-span-2 lg:row-span-2" : ""
-              }`}
+              className="glass glass-shine rounded-2xl overflow-hidden flex flex-col"
             >
-              <div className={`relative ${i === 0 ? "ratio-wide lg:aspect-[16/13]" : "ratio-wide"} overflow-hidden`}>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                {/* blurred fill so full photo is shown without cropping faces */}
+                <img
+                  src={c.img}
+                  aria-hidden
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
+                />
                 <img
                   src={c.img}
                   alt={c.title}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="relative z-[1] w-full h-full object-contain"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(180deg, rgba(4,7,13,0) 40%, rgba(4,7,13,0.7) 100%)" }}
+                  className="absolute inset-0 z-[2] pointer-events-none"
+                  style={{ background: "linear-gradient(180deg, rgba(4,7,13,0) 65%, rgba(4,7,13,0.65) 100%)" }}
                 />
-                <div className="absolute top-3 left-3 chip">{c.tag}</div>
+                <div className="absolute z-[3] top-3 left-3 chip">{c.tag}</div>
               </div>
               <figcaption className="p-5">
                 <h3 className="h3">{c.title}</h3>

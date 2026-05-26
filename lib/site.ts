@@ -3,9 +3,9 @@ export const site = {
   doctor: "Dr. Sandeep Sharma",
   tagline: "Psychiatry · Mental Wellness · Healthy Ageing",
   city: "Sri Ganganagar, Rajasthan, India",
-  phoneDisplay: "+91 00000 00000",
-  phone: "tel:+910000000000",
-  whatsapp: "https://wa.me/910000000000",
+  phoneDisplay: "+91 94145 25706",
+  phone: "tel:+919414525706",
+  whatsapp: "https://wa.me/919414525706",
   email: "mailto:care@divinepsychiatry.in",
   emailDisplay: "care@divinepsychiatry.in",
   mapsQuery:
