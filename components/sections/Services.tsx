@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/primitives/SectionHeading";
 import Icon, { IconName } from "@/components/primitives/Icons";
+import { PulseLine, Capsule } from "@/components/primitives/MedicalDecor";
 
 const services: { i: IconName; t: string; d: string }[] = [
   { i: "depression", t: "Depression", d: "Sustained low mood, fatigue and loss of interest treated with care and tested protocols." },
@@ -18,7 +19,11 @@ const services: { i: IconName; t: string; d: string }[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="section">
+    <section id="services" className="section relative overflow-hidden">
+      {/* Floating capsule accents */}
+      <Capsule className="hidden md:block absolute top-24 right-[6%] animate-floatA" rotate={-18} hue="teal" size={64} />
+      <Capsule className="hidden lg:block absolute bottom-20 left-[6%] animate-floatB" rotate={22} hue="blue" size={56} />
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Areas of Care"
@@ -26,7 +31,12 @@ export default function Services() {
           description="Each concern is treated with attention to context. Diagnosis is careful. Treatment is collaborative."
         />
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        {/* Pulse divider */}
+        <div className="mt-6 max-w-md">
+          <PulseLine className="h-6 opacity-70" />
+        </div>
+
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {services.map((s, i) => (
             <motion.article
               key={s.t}
@@ -42,6 +52,7 @@ export default function Services() {
                   <Icon name={s.i} />
                 </div>
                 <h3 className="h3 text-white">{s.t}</h3>
+                <span className="ml-auto text-teal-400/80 font-serif text-lg leading-none" aria-hidden>℞</span>
               </div>
               <p className="mt-4 text-sm text-white/65 leading-relaxed">{s.d}</p>
 

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import GlassPanel from "@/components/primitives/GlassPanel";
 import SectionHeading from "@/components/primitives/SectionHeading";
 import Icon from "@/components/primitives/Icons";
+import { PulseLine, StethoArc, CrossPlus } from "@/components/primitives/MedicalDecor";
 import { doctorImages } from "@/lib/images";
 
 const interests = [
@@ -34,6 +35,9 @@ export default function About() {
         <div className="mt-12 grid lg:grid-cols-12 gap-8 items-stretch">
           {/* Doctor visual */}
           <div className="lg:col-span-5 relative">
+            {/* Soft stethoscope decoration above frame */}
+            <StethoArc className="hidden md:block absolute -top-10 -right-4 w-32 h-20 text-teal-400/40" />
+            <CrossPlus className="hidden md:block absolute -top-2 right-28 w-4 h-4 text-teal-400 animate-glowSoft" />
             <motion.div
               style={{ y }}
               className="relative aspect-[3/4] rounded-[28px] overflow-hidden glass glass-shine"
@@ -90,6 +94,8 @@ export default function About() {
               <h3 className="h3 mt-3 text-gradient">
                 Evidence-based, compassionate and socially relevant mental healthcare.
               </h3>
+
+              <PulseLine className="mt-5 h-6 opacity-70" />
 
               <p className="lead mt-5">
                 Dr. Sandeep Sharma is a psychiatrist whose clinical work blends rigorous diagnosis

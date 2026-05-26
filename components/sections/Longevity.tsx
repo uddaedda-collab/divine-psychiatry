@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/primitives/SectionHeading";
 import Icon, { IconName } from "@/components/primitives/Icons";
+import { NeuronWeb, Capsule } from "@/components/primitives/MedicalDecor";
 
 const topics: { i: IconName; t: string; d: string }[] = [
   { i: "brain", t: "Brain Health", d: "Cognitive vitality across decades." },
@@ -32,6 +33,11 @@ export default function Longevity() {
               "conic-gradient(from 0deg, rgba(62,224,196,0.0), rgba(62,224,196,0.12), rgba(36,112,240,0.12), rgba(62,224,196,0.0))"
           }}
         />
+        {/* Neuron web — calm brain motif */}
+        <NeuronWeb className="absolute inset-x-0 top-1/3 mx-auto w-[120%] max-w-[1300px] opacity-[0.22]" />
+        {/* corner capsules */}
+        <Capsule className="hidden md:block absolute top-10 right-10 animate-floatA" rotate={18} hue="teal" size={70} />
+        <Capsule className="hidden md:block absolute bottom-12 left-10 animate-floatC" rotate={-22} hue="blue" size={60} />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">

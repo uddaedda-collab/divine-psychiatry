@@ -24,6 +24,7 @@ export default function Logo({ className = "" }: { className?: string }) {
       <span className="font-display text-[15px] tracking-tight">
         Divine <span className="text-white/60">Psychiatry</span>
       </span>
+      <span className="hidden sm:inline-flex items-center justify-center w-5 h-5 rounded-full bg-teal-400/15 text-teal-400 font-serif leading-none text-sm" aria-hidden>℞</span>
     </span>
   );
 }

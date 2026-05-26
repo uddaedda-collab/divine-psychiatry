@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/primitives/SectionHeading";
 import Icon from "@/components/primitives/Icons";
+import { PulseLine } from "@/components/primitives/MedicalDecor";
 
 type Review = { name: string; initials: string; tone: string; rating: 5 | 4; time: string; text: string };
 
@@ -130,6 +131,7 @@ export default function Reviews() {
               <span className="chip justify-center"><Icon name="shield" /> Confidential</span>
               <span className="chip justify-center"><Icon name="heart" /> Compassionate</span>
             </div>
+            <PulseLine className="mt-4 h-5 opacity-70" />
           </motion.div>
         </div>
 
