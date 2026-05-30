@@ -10,6 +10,51 @@ A premium liquid-glass psychiatry & longevity website. Built with Next.js (App R
 - Framer Motion (cinematic reveal & parallax)
 - Lenis (smooth scroll, RAF-driven)
 
+## Patient & Doctor Portals
+
+Beyond the marketing site, the app ships with two fully-interactive portals that
+share the same liquid-glass design. Because the site is a static export, the
+portals run entirely in the browser and persist data in `localStorage` (a small
+mock "database" with seed data — see `lib/db.ts`). No backend is required.
+
+Open the portal from the navbar **Portal** button, the hero **Patient Portal**
+CTA, or by visiting `/portal`.
+
+### Patient portal (`/portal/patient`)
+- Dashboard with next appointment & quick actions
+- Book an appointment (service, in-clinic/online, date, live slot picker)
+- My appointments (track status, cancel, read doctor's notes)
+- Prescriptions (medicines, dosage, advice, follow-up)
+- Medical records (add/view reports & notes)
+- Secure messaging with the clinic
+- Editable personal & medical profile
+
+### Doctor portal (`/portal/doctor`)
+- Practice dashboard (today's visits, pending requests, 7-day chart, totals)
+- Appointment management (confirm / complete with clinical note / cancel)
+- Patient directory with searchable profiles & history
+- Digital prescription writer (multi-medicine)
+- Day-by-day schedule / availability timeline
+- Patient conversations (reply per thread)
+
+### Demo credentials
+| Role | Email | Password |
+| --- | --- | --- |
+| Doctor | `dr.sandeep@divinepsychiatry.in` | `divine123` |
+| Patient | `patient@demo.in` | `demo1234` |
+
+Patients can also self-register from the portal. To reset the demo data, clear
+the browser's localStorage for the site (keys are prefixed `dpc.`).
+
+> Note: the portal store is a front-end demo. Passwords are kept in plain text in
+> `localStorage` purely for demonstration — wire it to a real authenticated
+> backend (e.g. Supabase, Firebase or a custom API) before production use.
+
+## Editing clinic data
+
+Services, doctor profile, working hours and consultation slots live in
+`lib/clinic.ts` — edit there to update both the portal and booking logic.
+
 ## Run locally
 
 ```bash

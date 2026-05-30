@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import { nav, site } from "@/lib/site";
@@ -45,6 +46,9 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link href="/portal" className="hidden sm:inline-flex btn btn-ghost text-[12.5px] !py-2 !px-3.5">
+            Portal
+          </Link>
           <a href="#contact" className="btn btn-primary text-[12.5px] !py-2 !px-3.5">
             Book
             <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden>
@@ -83,6 +87,10 @@ export default function Navbar() {
                   {n.label}
                 </a>
               ))}
+            </div>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <Link href="/portal" onClick={() => setOpen(false)} className="btn btn-ghost justify-center text-sm">Patient Portal</Link>
+              <Link href="/portal" onClick={() => setOpen(false)} className="btn btn-ghost justify-center text-sm">Doctor Portal</Link>
             </div>
             <div className="grid grid-cols-2 gap-2 mt-2">
               <a href={site.whatsapp} target="_blank" rel="noopener" className="btn btn-ghost justify-center text-sm">WhatsApp</a>
