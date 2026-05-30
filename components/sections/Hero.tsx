@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import Particles from "@/components/primitives/Particles";
 import Icon from "@/components/primitives/Icons";
 import {
@@ -105,6 +106,9 @@ export default function Hero() {
               <a href="#contact" className="btn btn-primary">
                 Book Appointment <Icon name="arrow" />
               </a>
+              <Link href="/portal" className="btn">
+                <Icon name="user" /> Patient Portal
+              </Link>
               <a href="#global" className="btn">
                 <Icon name="globe" /> Global Consultation
               </a>
